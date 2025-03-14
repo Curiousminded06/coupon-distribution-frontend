@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-
+import { API_BASE_URL } from "../config";
 function CouponClaim() {
   const [message, setMessage] = useState("");
 
   const claimCoupon = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/coupons/claim", {
+      const response = await fetch(`${API_BASE_URL}/api/coupons/claim`, {
         method: "POST",
       });
       const data = await response.json();
